@@ -8,7 +8,7 @@ function HugeFib( ) {
     this.index =  2; //1 indexed
 }
 HugeFib.prototype.nextFib = function( ) {
-
+    
     this.index += 1;
     var next = "";
 
@@ -28,14 +28,16 @@ HugeFib.prototype.nextFib = function( ) {
         //adder is between 0 and 19 inclusive
         if( adder.length > 1) {
             remainder = 1;
-            next = adder[1] + next;
+            next = next + adder[1];
         } else {
             remainder = 0;
-            next = adder + next;
+            next = next + adder;
         }
+
+
     }
-    if(remainder != 0) {
-        next = remainder.toString() + next;
+    if(remainder !== 0) {
+        next = next + remainder.toString();
     }
     this.last = this.curr;
     this.curr = next;
@@ -43,7 +45,12 @@ HugeFib.prototype.nextFib = function( ) {
 }
 HugeFib.prototype.getNext = function( ) {
     this.nextFib( );
-    return { fib: this.curr, index: this.index };
+    var i;
+    var output = '';
+    for(i = 0; i < this.curr.length; i++) {
+        output = this.curr[i] + output ;
+    }
+    return { fib: output, index: this.index };
 }
 HugeFib.prototype.getCurrent = function( ) {
     return { fib: this.curr, index: this.index };

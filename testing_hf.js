@@ -5,8 +5,11 @@ function main( ) {
     var fibObj = new fibObj.HugeFib();
 
     var fibby;
-    for(i = 0; i < 100; i++ ) {
+    for(i = 0; i < 2750; i++ ) {
         fibby = fibObj.getNext();
         console.log("i: " + fibby.index + " fib: " + fibby.fib);
     }
-}
+} 
+
+console.log("RUNNErs");
+main( );
