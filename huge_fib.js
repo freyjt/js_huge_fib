@@ -43,5 +43,8 @@ HugeFib.prototype.nextFib = function( ) {
 }
 HugeFib.prototype.getNext = function( ) {
     this.nextFib( );
-    return { next: this.curr, index: this.index };
+    return { fib: this.curr, index: this.index };
+}
+HugeFib.prototype.getCurrent = function( ) {
+    return { fib: this.curr, index: this.index };
 }
