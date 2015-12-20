@@ -8,7 +8,7 @@ function HugeFib( ) {
     this.index =  2; //1 indexed
 }
 HugeFib.prototype.nextFib = function( ) {
-    
+
     this.index += 1;
     var next = "";
 
@@ -40,4 +40,8 @@ HugeFib.prototype.nextFib = function( ) {
     this.last = this.curr;
     this.curr = next;
 
+}
+HugeFib.prototype.getNext = function( ) {
+    this.nextFib( );
+    return { next: this.curr, index: this.index };
 }
